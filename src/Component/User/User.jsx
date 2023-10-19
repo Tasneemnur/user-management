@@ -13,6 +13,7 @@ const User = ({user}) => {
     <div className="card-actions mt-6">
      <Link to={`/user/${id}`}><button className="btn btn-primary">Details</button></Link>
     </div>
+    
   </div>
 </div>
     );
