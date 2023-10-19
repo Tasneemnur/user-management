@@ -14,7 +14,7 @@ const UserDetails = () => {
       <Link to={`/updateUser/${data.id}`}>
         <button className="btn btn-primary">Update</button>
       </Link>
-      <Link to={`/user/${data.id}`}>
+      <Link to={`/deleteUser/${data.id}`}>
         <button className="btn btn-primary">Delete</button>
       </Link>
     </div>

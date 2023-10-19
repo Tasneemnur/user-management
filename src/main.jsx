@@ -10,6 +10,7 @@ import Users from './Component/Users/Users.jsx';
 import AddUser from './Component/AddUser/AddUser.jsx';
 import UserDetails from './Component/UserDetails/UserDetails.jsx';
 import UpdateUser from './Component/UpdateUser/UpdateUser.jsx';
+import DeleteUser from './Component/DeleteUser/DeleteUser.jsx';
 
 
 
@@ -39,8 +40,9 @@ const router = createBrowserRouter([
     loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
   },
   {
-    path: "/deleteUser",
-    element: <App></App>,
+    path: "/deleteUser/:id",
+    element: <DeleteUser></DeleteUser>,
+    loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
   },
  
   
