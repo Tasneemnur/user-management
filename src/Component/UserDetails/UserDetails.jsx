@@ -11,7 +11,7 @@ const UserDetails = () => {
       <div className=" text-neutral-500 my-3">{data.email}</div>
       <div className="text-xl ">Phone: {data.phone}</div>
       <Link to="/"><button className="btn btn-primary">Back</button></Link>
-      <Link to={`/user/${data.id}`}>
+      <Link to={`/updateUser/${data.id}`}>
         <button className="btn btn-primary">Update</button>
       </Link>
       <Link to={`/user/${data.id}`}>

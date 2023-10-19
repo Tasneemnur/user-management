@@ -1,6 +1,7 @@
-
+import { useLoaderData } from "react-router-dom";
 import axios from "axios";
 const UpdateUser = () => {
+    const data = useLoaderData();
     const handleUpdate = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -9,7 +10,7 @@ const UpdateUser = () => {
        const phone = form.phone.value;
        const formData = {name, email, phone}
        axios
-       .post("https://jsonplaceholder.typicode.com/users", formData)
+       .put(`https://jsonplaceholder.typicode.com/users/${data.id}`, formData)
        .then((res) => {
          console.log(res);
        });
@@ -24,19 +25,19 @@ const UpdateUser = () => {
                 <label className="label">
                   <span className="label-text">Name</span>
                 </label>
-                <input type="text" name="name" placeholder="name" className="input input-bordered" required />
+                <input type="text" name="name" placeholder="name" className="input input-bordered" defaultValue={data.name} required />
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
-                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                <input type="email" name="email" defaultValue={data.email} placeholder="email" className="input input-bordered" required />
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Phone</span>
                 </label>
-                <input type="text" placeholder="phone" name="phone" className="input input-bordered" required />
+                <input type="text" placeholder="phone" name="phone" defaultValue={data.phone} className="input input-bordered" required />
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Update</button>

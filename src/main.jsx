@@ -34,8 +34,9 @@ const router = createBrowserRouter([
     element: <AddUser></AddUser>,
   },
   {
-    path: "/updateUser",
+    path: "/updateUser/:id",
     element: <UpdateUser></UpdateUser>,
+    loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
   },
   {
     path: "/deleteUser",

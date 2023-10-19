@@ -22,8 +22,7 @@ function App() {
      
       <li> <Link to="/users">Users</Link></li>
       <li> <Link to="/addUser">Add User</Link></li>
-      <li> <Link to="/updateUser">Update User</Link></li>
-      <li> <Link to="/deleteUser">Delete User</Link></li>
+     
     
     </ul>
   
